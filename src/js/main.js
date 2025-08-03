@@ -1,3 +1,5 @@
-const header = document.querySelector('h2')
-
-header.textContent='Hello from JS'
+// const x = document.querySelector('')
+// const x = document.querySelector('')
+// const x = document.querySelector('')
+// const x = document.querySelector('')
+// const x = document.querySelector('')

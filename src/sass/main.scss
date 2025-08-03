@@ -1,13 +1,13 @@
 * {letter-spacing: 2px;
-  color: white;
+  color: rgb(204, 216, 194);
 }
 body {
     position: relative;
   width: 100%;
-  height: 1200px;
+  height: 1400px;
   margin: 0;
   box-sizing: border-box;
-  background-image: url(../img/preto.jpg);
+  background-image: url(../img/preto2.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
@@ -77,11 +77,13 @@ footer {
 //   align-items: center;
   color: white;
   position: absolute;
+  margin-bottom: 10px;
   bottom: 0;
   left: 0;
   width: 100%;
   a {
     font-size: 1.5rem;
+    padding: 1rem;
     text-decoration: none;
     text-transform: uppercase;
   }
@@ -107,6 +109,14 @@ align-items: center;}
   .icon {
     height: 50px;
     width: 50px;
-    margin: 8px;
+    
   }
+}
+
+
+.modal { height: 100%;
+width: 30%;
+background-color: rgb(235, 235, 235);
+border-radius: 8px;
+box-shadow: 2px 2px 10px white;
 }
