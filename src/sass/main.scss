@@ -178,12 +178,12 @@ footer {
 	.location-popup {
 		background-color: white;
 		position: absolute;
-		top: -260px;
-		right: 100px;
-		height: 300px;
-		width: 300px;
+		top: -420px;
+		right: 50px;
+		height: 420px;
+		width: 380px;
 		background-color: white;
-		border-radius: 50%;
+		border-radius: 8px;
 		opacity: 0;
 		pointer-events: none;
 	}
@@ -231,7 +231,7 @@ footer {
 			background-color: rgb(250, 236, 158);
 		}
 		25% {
-			transform: translate(4000px);
+			transform: translate(4500px);
 			background-color: rgba(255, 255, 255, 0.3);
 		}
 		45% {
@@ -251,7 +251,7 @@ footer {
 		90% {
 		}
 		100% {
-			transform: translate(4000px);
+			transform: translate(4500px);
 			background-color: white;
 		}
 	}
