@@ -22,7 +22,7 @@ body {
 	left: 0;
 	width: 80%;
 	margin: 0 auto;
-	height: 100vh;
+	height: 800px;
 	// background-color: black;
 	//  position: relative;
 	// overflow: hidden;
@@ -176,83 +176,127 @@ footer {
 		width: 50px;
 	}
 	.location-popup {
+		display: flex;
+		flex-direction: column;
+		text-align: center;
+		line-height: 30px;
+		overflow: hidden;
 		background-color: white;
 		position: absolute;
-		top: -420px;
+		top: -400px;
 		right: 50px;
-		height: 420px;
+		height: 380px;
 		width: 380px;
 		background-color: white;
 		border-radius: 8px;
 		opacity: 0;
 		pointer-events: none;
+		background-color: rgb(230, 227, 214);
+		color: black;
 	}
 
 	.show-map {
 		opacity: 1;
 		pointer-events: auto;
+		p {
+			color: black;
+			text-transform: uppercase;
+		}
 	}
 
-	.modal {
+	.map-container {
+		// position: absolute;
+		// bottom: 20px;
+		margin-top: 20px;
+	}
+}
+
+@keyframes glow {
+	0% {
+		text-shadow: 0px 0px 8px rgba(255, 255, 255, 0);
+	}
+
+	30% {
+		text-shadow: 2px 2px 20px rgb(255, 234, 114);
+		color: white;
+	}
+	0% {
+		text-shadow: 0px 0px 8px rgba(255, 255, 255, 0);
+	}
+}
+
+@keyframes shine {
+	0% {
+	}
+	10% {
+	}
+	15% {
+		transform: translate(0);
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+	18% {
+		background-color: rgb(250, 236, 158);
+	}
+	25% {
+		transform: translate(4500px);
+		background-color: rgba(255, 255, 255, 0.3);
+	}
+	45% {
+	}
+	49% {
+	}
+	50% {
+	}
+	55% {
+	}
+	60% {
+	}
+	70% {
+	}
+	80% {
+	}
+	90% {
+	}
+	100% {
+		transform: translate(4500px);
+		background-color: white;
+	}
+}
+
+.modal {
+	opacity: 0;
+		display: flex;
+		flex-direction: column;
 		position:absolute;
-		height: 100px;
-		width: 100px;
+		height: 800px;
+		width: 100%;
 		left: 0;
-		top: 40px;
+		top: 50px;
 		background-color: rgb(235, 235, 235);
 		box-shadow: 1px 1px 5px white;
 		z-index: 5;
+
+
+h2{margin:100px auto;}
+		p{color: black;
+		margin:150px;
+	text-align: center;}
+
+		.modal-photo{height: 100px;
+		width: 100%;
+		position: absolute;
+		bottom: 0;
+		
+	}
 	}
 
-	@keyframes glow {
-		0% {
-			text-shadow: 0px 0px 8px rgba(255, 255, 255, 0);
-		}
+	.show { opacity:1}
 
-		30% {
-			text-shadow: 2px 2px 20px rgb(255, 234, 114);
-			color: white;
-		}
-		0% {
-			text-shadow: 0px 0px 8px rgba(255, 255, 255, 0);
-		}
+	@keyframes modalSlide {
+		from { opacity:0;
+		top:-800px;}
+		to { opacity:0.92;
+		top:50px}
 	}
 
-	@keyframes shine {
-		0% {
-		}
-		10% {
-		}
-		15% {
-			transform: translate(0);
-			background-color: rgba(255, 255, 255, 0.3);
-		}
-		18% {
-			background-color: rgb(250, 236, 158);
-		}
-		25% {
-			transform: translate(4500px);
-			background-color: rgba(255, 255, 255, 0.3);
-		}
-		45% {
-		}
-		49% {
-		}
-		50% {
-		}
-		55% {
-		}
-		60% {
-		}
-		70% {
-		}
-		80% {
-		}
-		90% {
-		}
-		100% {
-			transform: translate(4500px);
-			background-color: white;
-		}
-	}
-}
+	.animatedSlide { animation: modalSlide 0.5s forwards;}
