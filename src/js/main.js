@@ -42,11 +42,11 @@ function openLocationPopup() {
 navButtons.forEach((button) =>
   button.addEventListener("click", (e) => {
     if (e.target.textContent === modalH2Bucket.textContent) {
-      modal.classList.remove("show");
+    //   modal.classList.remove("show");
       modal.classList.remove("animatedSlide");
       modalH2Bucket.textContent = "";
     } else {
-      modal.classList.add("show");
+    //   modal.classList.add("show");
       modal.classList.add("animatedSlide");
       if (e.target.textContent === "O nas") {
         fillModal(data[0].mName, data[0].mText, data[0].mPhoto);

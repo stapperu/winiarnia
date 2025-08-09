@@ -250,12 +250,10 @@ footer {
   opacity: 0;
   pointer-events: none;
   position: fixed;
-  height: 800px;
+  height: 500px;
   width: 800px;
-  left: 0;
   top: 80px;
-  background-color: rgb(235, 235, 235);
-  box-shadow: 1px 1px 5px white;
+  background-color: rgb(206, 206, 206);
   border-radius: 12px;
   padding:20px 10px;
  display: flex;
@@ -277,7 +275,12 @@ footer {
   }
 }
 
-.show {
-  pointer-events: auto;
-  opacity: 1;
-}
+
+@keyframes animatedSlide {
+	from { opacity:0;
+	top:-800px;}
+	to { opacity:0.94;
+	top:190px;}
+ }
+
+ .animatedSlide { animation: animatedSlide 0.6s forwards;}
