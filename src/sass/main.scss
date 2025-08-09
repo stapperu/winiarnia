@@ -9,34 +9,36 @@
 }
 
 body {
-	background-image: url(../img/preto3.jpg);
-	background-position-x: center;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-color: black;
 }
 
 .wrapper {
 	overflow: hidden;
-	position: relative;
 	top: 0;
 	left: 0;
-	width: 80%;
-	margin: 0 auto;
-	height: 100vh;
-	// background-color: black;
-	//  position: relative;
-	// overflow: hidden;
-
+	width: 85%;
+	// height: 1400px;
+	margin:100px auto 0px;
 	display: flex;
+	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 }
+.wrapper-img { 	background-image: url(../img/preto3.jpg);
+	background-position-x: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	box-shadow: inset 0px 0px 20px black;
+height: 100vh;
+width: 60%;
+top: 100px;}
 h1 {
-	position: absolute;
+	position: relative;
+
 
 	text-transform: uppercase;
 	color: white;
-	top: 15%;
+	top: 80px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -53,7 +55,7 @@ h1 {
 
 h1::before {
 	position: absolute;
-	left: -1200px;
+	left: -1900px;
 	top: 80px;
 	content: "";
 	width: 140px;
@@ -62,10 +64,6 @@ h1::before {
 	box-shadow: 1px 1px 20px white;
 	background-color: white;
 	animation: shine 12s infinite;
-}
-
-h2 {
-	color: blue;
 }
 
 nav {
@@ -129,13 +127,12 @@ footer {
 	bottom: 0;
 	// left: 0;
 	width: 100%;
-	margin-top: 200px;
-	padding-top: 30px;
+	padding-top: 20px;
 	box-shadow: 0px 0px 20px black;
-	a {
+	a, p {
 		animation: glow 4s infinite;
 		color: rgb(141, 141, 141);
-		font-size: 1.5rem;
+		font-size: 1.4rem;
 		padding: 0.5rem;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -145,7 +142,7 @@ footer {
 	.socials {
 		padding: 10px;
 		margin: 0px auto;
-		font-size: 1.6rem;
+		font-size: 1.5rem;
 		width: 80%;
 		display: flex;
 		justify-content: space-evenly;
@@ -166,7 +163,7 @@ footer {
 		span {
 			font-weight: bold;
 			text-transform: uppercase;
-			font-size: 1.1rem;
+			font-size: 1rem;
 			color: rgb(121, 121, 121);
 		}
 	}
