@@ -9,6 +9,16 @@ let modalH2Bucket = document.querySelector(".modal-h2");
 const locationPopup = document.querySelector(".location-popup");
 const addressBtn = document.querySelector(".addressBtn");
 const navButtons = document.querySelectorAll("button");
+
+const popups = [modal,locationPopup];
+
+function closeModalAnywhere(e){
+const isNavButton = Array.from(navButtons).some(button => button === e.target || button.contains(e.target));
+if (!isNavButton) {
+    modal.classList.remove("animatedSlide");
+     modalH2Bucket.textContent = "";}
+  }
+
 const data = [
   {
     mName: "O nas",
@@ -37,8 +47,18 @@ function fillModal(mName, mText, mPhoto) {
 }
 
 function openLocationPopup() {
-  locationPopup.classList.toggle("show-map");
+ 
+  locationPopup.classList.add("show-map");
 }
+function closeLocationPopupAnywhere(e){
+  const isAddressBtn = addressBtn===e.target || addressBtn.contains(e.target);
+  const isLocationPopup = locationPopup===e.target || locationPopup.contains(e.target);
+  console.log(isLocationPopup);
+  if(!isLocationPopup && locationPopup.classList.contains("show-map") && !isAddressBtn){locationPopup.classList.remove("show-map");
+    console.log(locationPopup.classList.contains("show-map"));
+}
+}
+
 navButtons.forEach((button) =>
   button.addEventListener("click", (e) => {
     if (e.target.textContent === modalH2Bucket.textContent) {
@@ -60,3 +80,6 @@ navButtons.forEach((button) =>
 );
 
 addressBtn.addEventListener("click", openLocationPopup);
+window.addEventListener("click", closeModalAnywhere)
+window.addEventListener("click", closeLocationPopupAnywhere)
+console.log(window);
