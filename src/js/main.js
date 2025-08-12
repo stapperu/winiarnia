@@ -33,7 +33,7 @@ const data = [
     mPhoto: "./src/img/wine1.png",
   },
   {
-    mName: "Kontakt",
+    mName: "Organizacja eventów",
     mText:
       "33333Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis consequuntur fugit illo impedit natus placeat corporis eaque nulla maiores alias obcaecati eveniet vitae, ex sed aperiam facere sint labore corrupti.",
     mPhoto: "./src/img/image.jpg",
@@ -72,7 +72,7 @@ navButtons.forEach((button) =>
         fillModal(data[0].mName, data[0].mText, data[0].mPhoto);
       } else if (e.target.textContent === "Nasze osiągnięcia") {
         fillModal(data[1].mName, data[1].mText, data[1].mPhoto);
-      } else if (e.target.textContent === "Kontakt") {
+      } else if (e.target.textContent === "Organizacja eventów") {
         fillModal(data[2].mName, data[2].mText, data[2].mPhoto);
       }
     }
