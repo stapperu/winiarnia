@@ -24,19 +24,19 @@ const data = [
     mName: "O nas",
     mText:
       "Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis consequuntur fugit illo impedit natus placeat corporis eaque nulla maiores alias obcaecati eveniet vitae, ex sed aperiam facere sint labore corrupti.",
-    mPhoto: "./src/img/pretologo.jpg",
+    mPhoto: "",
   },
   {
     mName: "Nasze osiągnięcia",
     mText:
       "222Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis consequuntur fugit illo impedit natus placeat corporis eaque nulla maiores alias obcaecati eveniet vitae, ex sed aperiam facere sint labore corrupti.",
-    mPhoto: "./src/img/wine1.png",
+    mPhoto: "",
   },
   {
     mName: "Organizacja eventów",
     mText:
       "33333Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis consequuntur fugit illo impedit natus placeat corporis eaque nulla maiores alias obcaecati eveniet vitae, ex sed aperiam facere sint labore corrupti.",
-    mPhoto: "./src/img/image.jpg",
+    mPhoto: "",
   },
 ];
 
