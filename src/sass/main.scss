@@ -265,18 +265,19 @@ margin:20px auto;}
   }
 
 .modal {
+
   display: flex;
   flex-direction: column;
   // justify-content: center;
   align-items: center;
   overflow:none;
   opacity: 0;
-  pointer-events: none;
+  // pointer-events: none;
   position: absolute;
   height: 80vh;
   width: 90%;
   top:0;
-  background-image: url(../img/modalbcg);
+  background-image: url(../img/modalbcg.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -284,11 +285,44 @@ margin:20px auto;}
   padding:20px 10px;
   z-index: 5;
 
-  h2,
+  h2 {font-size: 3rem;
+    text-transform: uppercase;
+    margin: 30px 10px;
+    color: black;
+  letter-spacing: 7px;}
   .modal-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     margin:30px auto;
     color: black;
 	padding: 20px;
+
+  h3 { color: black;
+  font-size: 2rem;}
+  p:nth-child(even){color: rgb(57, 57, 57);}
+
+  a { font-size: 1.4rem;
+    margin:20px;
+text-transform: uppercase;
+text-decoration: none;
+font-size: bold;
+color: black;}
+
+sub {color: black;}
+
+span { margin:30px;}
+
+  }
+
+  p {   color: black;
+  line-height: 25px;
+font-size: 1.3rem;
+padding: 10px 15px;
+margin:0 auto;
+
+
   }
   .modal-photo {
     height: 200px;
