@@ -24,6 +24,7 @@ function closeModalAnywhere(e) {
   if (!isNavButton) {
     modal.classList.remove("animatedSlide");
     modalH2Bucket.textContent = "";
+    modalTextBucket.textContent="";
   // }
   }
 }
@@ -43,15 +44,23 @@ const data = [
   },
   {
     mName: "Organizacja eventów",
-    mText:"<p>Zapraszamy do zapoznania się z materiałami na temat wina i prowadzenia winnicy. Poniżej znajdziesz dwa dokumenty, które dostarczą Ci szczegółowych informacji:</p> <p>Wszystko o winie – kompendium wiedzy o produkcji, degustacji i historii wina.</p><a href='../src/img/Wszystko-o-winie.pdf' download>Wszystko o winie<sub>.pdf</sub></a> <p>Założenie i prowadzenie winnicy – praktyczny poradnik dla osób zainteresowanych zakładaniem i zarządzaniem winnicą.</p><a href='../src/img/Zalozenie-i-prowadzenie-winnicy.pdf' download>Założenie i prowadzenie winniycy<sub>.pdf<sub></a> <span>Pobierz powyższe materiały, aby dowiedzieć się więcej!</span>",
+    mText:"<p>Zapraszamy do zapoznania się z materiałami na temat wina i prowadzenia winnicy. Poniżej znajdziesz dwa dokumenty, które dostarczą Ci szczegółowych informacji:</p> <p>Wszystko o winie – kompendium wiedzy o produkcji, degustacji i historii wina.</p><a href='../src/img/Wszystko-o-winie.pdf' download>Wszystko o winie<sub>.pdf</sub></a> <p>Założenie i prowadzenie winnicy – praktyczny poradnik dla osób zainteresowanych zakładaniem i zarządzaniem winnicą.</p><a href='../src/img/Zalozenie-i-prowadzenie-winnicy.pdf' download>Założenie i prowadzenie winniycy<sub>.pdf<sub></a> <span>Pobierz powyższe materiały, aby dowiedzieć się więcej!</span><h3> Zamujemy się również organizacją spotkań biznesowych, przyjęć jubileuszowych, ślubów/weseli... <h3>",
     mPhoto: "",
   },
+  {mName:"Nasze Wina"
+  }
 ];
 
 function fillModal(mName, mText, mPhoto) {
   modalH2Bucket.textContent = mName;
   modalTextBucket.innerHTML = mText;
   modalPhotoBucket.src = mPhoto;
+}
+
+function fillWineSelection (wineName,wineDescription,winePhoto){
+  wineNameBucket.textContent=wineName;
+  wineDescriptionBucket.textContent=wineDescription;
+  winePhotoBucket.textContent=winePhoto;
 }
 
 function openLocationPopup() {
@@ -77,6 +86,7 @@ navButtons.forEach((button) =>
     if (e.target.textContent === modalH2Bucket.textContent) {
       //   modal.classList.remove("show");
       modal.classList.remove("animatedSlide");
+      modalTextBucket.textContent = "";
       modalH2Bucket.textContent = "";
     } else {
       //   modal.classList.add("show");
@@ -87,6 +97,8 @@ navButtons.forEach((button) =>
         fillModal(data[1].mName, data[1].mText, data[1].mPhoto);
       } else if (e.target.textContent === "Organizacja eventów") {
         fillModal(data[2].mName, data[2].mText, data[2].mPhoto);
+      } else if (e.target.textContent ==="Nasze wina"){fillModal(data[3].mName,data[3].mText,data[3].mPhoto);
+        fillWineSelection(wines[i].blablabla,"","")
       }
     }
   })

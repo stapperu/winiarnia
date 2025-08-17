@@ -112,6 +112,15 @@ ul {
   align-items: center;
   list-style: none;
   width: 100%;
+
+  li {
+    text-align: center;
+    svg{ height: 30px;
+    width: 30px;
+  }
+  }
+
+
   button {
     background-color: transparent;
     border: none;
@@ -265,16 +274,14 @@ margin:20px auto;}
   }
 
 .modal {
-
   display: flex;
   flex-direction: column;
-  // justify-content: center;
+  justify-content: center;
   align-items: center;
   overflow:none;
   opacity: 0;
   // pointer-events: none;
   position: absolute;
-  height: 80vh;
   width: 90%;
   top:0;
   background-image: url(../img/modalbcg.jpg);
@@ -282,10 +289,11 @@ margin:20px auto;}
   background-repeat: no-repeat;
   background-size: cover;
   border-radius: 12px;
-  padding:20px 10px;
+  padding:80px 50px 80px 50px;
   z-index: 5;
 
-  h2 {font-size: 3rem;
+  h2 {font-size: 2.5rem;
+       text-shadow: 2px 2px 2px white;
     text-transform: uppercase;
     margin: 30px 10px;
     color: black;
