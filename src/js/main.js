@@ -3,6 +3,7 @@ const prizesBtn = document.querySelector(".prizes");
 const locationsBtn = document.querySelector(".aboutus");
 const contactBtn = document.querySelector(".aboutus");
 const modal = document.querySelector(".modal");
+const modalText=document.querySelector(".modal-text")
 let modalPhotoBucket = document.querySelector(".modal-photo");
 let modalTextBucket = document.querySelector(".modal-text");
 let modalH2Bucket = document.querySelector(".modal-h2");
@@ -10,24 +11,43 @@ const locationPopup = document.querySelector(".location-popup");
 const addressBtn = document.querySelector(".addressBtn");
 const navButtons = document.querySelectorAll("button");
 
-
-const popups = [modal, locationPopup];
-
-function closeModalAnywhere(e) {
-//   const downloadLinks =modal.querySelectorAll("a");
-// console.log(downloadLinks);
-// const isDownloadLinksVisible=modalH2Bucket.textContent==="Organizacja eventów";
-// if(!isDownloadLinksVisible){
-  const isNavButton = Array.from(navButtons).some(
-    (button) => button === e.target || button.contains(e.target)
-  );
-  if (!isNavButton) {
-    modal.classList.remove("animatedSlide");
-    modalH2Bucket.textContent = "";
-    modalTextBucket.textContent="";
-  // }
-  }
-}
+const wines = [
+  {
+    wineName: "chardonnay pw",
+    wineDescritpion: "chardonnay pw description",
+    winePhoto: "../src/img/chardonnay-pw-winnica-preto.jpg",
+  },
+  {
+    wineName: "gewurztraminer pw",
+    wineDescritpion: "gewurztraminer pw description",
+    winePhoto: "../src/img/gewurztraminer-pw-winnica-preto.jpg",
+  },
+  {
+    wineName: "pinot-noir-barrique",
+    wineDescritpion: "pinot-noir-barrique description",
+    winePhoto: "../src/img/pinot-noir-barrique-winnica-preto.jpg",
+  },
+  {
+    wineName: "regent-barrique",
+    wineDescritpion: "regent-barrique description",
+    winePhoto: "../src/img/regent-barrique-winnica-preto.jpg",
+  },
+  {
+    wineName: "rose pw",
+    wineDescritpion: "rose pw description",
+    winePhoto: "../src/img/rose-pw-winnica-preto.jpg",
+  },
+  {
+    wineName: "solaris",
+    wineDescritpion: "solaris description",
+    winePhoto: "../src/img/solaris-winnica-preto.jpg",
+  },
+  {
+    wineName: "souvignier-gris",
+    wineDescritpion: "souvignier-gris description",
+    winePhoto: "../src/img/souvignier-gris-winnica-preto.jpg",
+  },
+];
 
 const data = [
   {
@@ -44,12 +64,30 @@ const data = [
   },
   {
     mName: "Organizacja eventów",
-    mText:"<p>Zapraszamy do zapoznania się z materiałami na temat wina i prowadzenia winnicy. Poniżej znajdziesz dwa dokumenty, które dostarczą Ci szczegółowych informacji:</p> <p>Wszystko o winie – kompendium wiedzy o produkcji, degustacji i historii wina.</p><a href='../src/img/Wszystko-o-winie.pdf' download>Wszystko o winie<sub>.pdf</sub></a> <p>Założenie i prowadzenie winnicy – praktyczny poradnik dla osób zainteresowanych zakładaniem i zarządzaniem winnicą.</p><a href='../src/img/Zalozenie-i-prowadzenie-winnicy.pdf' download>Założenie i prowadzenie winniycy<sub>.pdf<sub></a> <span>Pobierz powyższe materiały, aby dowiedzieć się więcej!</span><h3> Zamujemy się również organizacją spotkań biznesowych, przyjęć jubileuszowych, ślubów/weseli... <h3>",
+    mText:
+      "<p>Zapraszamy do zapoznania się z materiałami na temat wina i prowadzenia winnicy. Poniżej znajdziesz dwa dokumenty, które dostarczą Ci szczegółowych informacji:</p> <p>Wszystko o winie – kompendium wiedzy o produkcji, degustacji i historii wina.</p><a href='../src/img/Wszystko-o-winie.pdf' download>Wszystko o winie<sub>.pdf</sub></a> <p>Założenie i prowadzenie winnicy – praktyczny poradnik dla osób zainteresowanych zakładaniem i zarządzaniem winnicą.</p><a href='../src/img/Zalozenie-i-prowadzenie-winnicy.pdf' download>Założenie i prowadzenie winniycy<sub>.pdf<sub></a> <span>Pobierz powyższe materiały, aby dowiedzieć się więcej!</span><h3> Zamujemy się również organizacją spotkań biznesowych, przyjęć jubileuszowych, ślubów/weseli... <h3>",
     mPhoto: "",
   },
-  {mName:"Nasze Wina"
-  }
+  {
+    mName: "Nasze Wina",
+    mText:"",
+      // "<div class='wines-wrapper'><div class='wines wine1'><h3 class='wineName'></h3><p class='wineDescription'></p><img src='' alt='' class='winePhoto'></div><div class='wines wine2'></div><div class='wines wine3'></div><div class='wines wine4'></div><div class='wines wine5'></div></div>",
+    mPhoto: "",
+  },
 ];
+
+const popups = [modal, locationPopup];
+
+function closeModalAnywhere(e) {
+  const isNavButton = Array.from(navButtons).some(
+    (button) => button === e.target || button.contains(e.target)
+  );
+  if (!isNavButton) {
+    modal.classList.remove("animatedSlide");
+    modalH2Bucket.textContent = "";
+    modalTextBucket.textContent = "";
+  }
+}
 
 function fillModal(mName, mText, mPhoto) {
   modalH2Bucket.textContent = mName;
@@ -57,11 +95,7 @@ function fillModal(mName, mText, mPhoto) {
   modalPhotoBucket.src = mPhoto;
 }
 
-function fillWineSelection (wineName,wineDescription,winePhoto){
-  wineNameBucket.textContent=wineName;
-  wineDescriptionBucket.textContent=wineDescription;
-  winePhotoBucket.textContent=winePhoto;
-}
+
 
 function openLocationPopup() {
   locationPopup.classList.add("show-map");
@@ -70,14 +104,12 @@ function closeLocationPopupAnywhere(e) {
   const isAddressBtn = addressBtn === e.target || addressBtn.contains(e.target);
   const isLocationPopup =
     locationPopup === e.target || locationPopup.contains(e.target);
-  console.log(isLocationPopup);
   if (
     !isLocationPopup &&
     locationPopup.classList.contains("show-map") &&
     !isAddressBtn
   ) {
     locationPopup.classList.remove("show-map");
-    console.log(locationPopup.classList.contains("show-map"));
   }
 }
 
@@ -97,14 +129,50 @@ navButtons.forEach((button) =>
         fillModal(data[1].mName, data[1].mText, data[1].mPhoto);
       } else if (e.target.textContent === "Organizacja eventów") {
         fillModal(data[2].mName, data[2].mText, data[2].mPhoto);
-      } else if (e.target.textContent ==="Nasze wina"){fillModal(data[3].mName,data[3].mText,data[3].mPhoto);
-        fillWineSelection(wines[i].blablabla,"","")
+      } else if (e.target.textContent === "Nasze wina") {
+        fillModal(data[3].mName, data[3].mText, data[3].mPhoto);
+        console.log("hi");
+        // let wineNameBucket = document.querySelector(".wineName");
+        // let wineTextBucket = document.querySelector(".wineDescription");
+        // let winePhotoBucket = document.querySelector(".winePhoto");
+      //  const wineWrapper=document.querySelector(".wines-wrapper");
+      //   console.log(wineWrapper);
+        // console.log(wineNameBucket);
+        for (i = 0; i < wines.length; i++) {
+          console.log(wines.length);
+          let div=document.createElement("div");
+          let wineNameBucket=document.createElement("h3");
+          let wineDescBucket=document.createElement("p");
+          let winePhotoBucket=document.createElement("img");
+          modalText.appendChild(div);
+          div.appendChild(wineNameBucket);
+          div.appendChild(wineDescBucket);
+          div.appendChild(winePhotoBucket);
+          div.classList.add("wines");
+          wineNameBucket.classList.add("wineName");
+          wineDescBucket.classList.add("wineDescription");
+          winePhotoBucket.classList.add("winePhoto");
+          
+          function fillWineSelection(wineName, wineDescription, winePhoto) {
+  wineNameBucket.textContent = wineName;
+  wineDescBucket.textContent = wineDescription;
+  winePhotoBucket.setAttribute("src" ,winePhoto)
+}
+
+PRZEJSC Z OBECNEGO KONTENERU (MODAL-TEXT) DO INNEGO OSTYLOWANEGO OSOBNO !!!
+          
+          fillWineSelection(
+            wines[i].wineName,
+            wines[i].wineDescritpion,
+            wines[i].winePhoto
+          );
+        }
       }
     }
   })
 );
+ 
 
 addressBtn.addEventListener("click", openLocationPopup);
 window.addEventListener("click", closeModalAnywhere);
 window.addEventListener("click", closeLocationPopupAnywhere);
-console.log(window);
