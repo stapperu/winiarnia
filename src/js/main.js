@@ -65,13 +65,12 @@ const data = [
   {
     mName: "Organizacja eventów",
     mText:
-      "<p>Zapraszamy do zapoznania się z materiałami na temat wina i prowadzenia winnicy. Poniżej znajdziesz dwa dokumenty, które dostarczą Ci szczegółowych informacji:</p> <p>Wszystko o winie – kompendium wiedzy o produkcji, degustacji i historii wina.</p><a href='../src/img/Wszystko-o-winie.pdf' download>Wszystko o winie<sub>.pdf</sub></a> <p>Założenie i prowadzenie winnicy – praktyczny poradnik dla osób zainteresowanych zakładaniem i zarządzaniem winnicą.</p><a href='../src/img/Zalozenie-i-prowadzenie-winnicy.pdf' download>Założenie i prowadzenie winniycy<sub>.pdf<sub></a> <span>Pobierz powyższe materiały, aby dowiedzieć się więcej!</span><h3> Zamujemy się również organizacją spotkań biznesowych, przyjęć jubileuszowych, ślubów/weseli... <h3>",
+      "<p>Zapraszamy do zapoznania się z materiałami na temat wina i prowadzenia winnicy. Poniżej znajdziesz dwa dokumenty, które dostarczą Ci szczegółowych informacji:</p> <p>Wszystko o winie – kompendium wiedzy o produkcji, degustacji i historii wina.</p><a href='../src/img/Wszystko-o-winie.pdf' download>Wszystko o winie<sub>.pdf</sub></a> <p>Założenie i prowadzenie winnicy – praktyczny poradnik dla osób zainteresowanych zakładaniem i zarządzaniem winnicą.</p><a href='../src/img/Zalozenie-i-prowadzenie-winnicy.pdf' download>Założenie i prowadzenie winnicy<sub>.pdf<sub></a> <span>Pobierz powyższe materiały, aby dowiedzieć się więcej!</span><h3> Zamujemy się również organizacją spotkań biznesowych, przyjęć jubileuszowych, ślubów/weseli... <h3>",
     mPhoto: "",
   },
   {
     mName: "Nasze Wina",
     mText:"",
-      // "<div class='wines-wrapper'><div class='wines wine1'><h3 class='wineName'></h3><p class='wineDescription'></p><img src='' alt='' class='winePhoto'></div><div class='wines wine2'></div><div class='wines wine3'></div><div class='wines wine4'></div><div class='wines wine5'></div></div>",
     mPhoto: "",
   },
 ];
@@ -131,15 +130,8 @@ navButtons.forEach((button) =>
         fillModal(data[2].mName, data[2].mText, data[2].mPhoto);
       } else if (e.target.textContent === "Nasze wina") {
         fillModal(data[3].mName, data[3].mText, data[3].mPhoto);
-        console.log("hi");
-        // let wineNameBucket = document.querySelector(".wineName");
-        // let wineTextBucket = document.querySelector(".wineDescription");
-        // let winePhotoBucket = document.querySelector(".winePhoto");
-      //  const wineWrapper=document.querySelector(".wines-wrapper");
-      //   console.log(wineWrapper);
-        // console.log(wineNameBucket);
+    
         for (i = 0; i < wines.length; i++) {
-          console.log(wines.length);
           let div=document.createElement("div");
           let wineNameBucket=document.createElement("h3");
           let wineDescBucket=document.createElement("p");
@@ -159,7 +151,7 @@ navButtons.forEach((button) =>
   winePhotoBucket.setAttribute("src" ,winePhoto)
 }
 
-PRZEJSC Z OBECNEGO KONTENERU (MODAL-TEXT) DO INNEGO OSTYLOWANEGO OSOBNO !!!
+// PRZEJSC Z OBECNEGO KONTENERU (MODAL-TEXT) DO INNEGO OSTYLOWANEGO OSOBNO !!!
           
           fillWineSelection(
             wines[i].wineName,
