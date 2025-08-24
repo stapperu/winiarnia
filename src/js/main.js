@@ -126,16 +126,16 @@ navButtons.forEach((button) =>
       modal.classList.add("animatedSlide");
       if (e.target.textContent === "O nas") {
         fillModal(data[0].mName, data[0].mText, data[0].mPhoto);
-        modalWineSection.style.display="none";
+        // modalWineSection.style.display="none";
       } else if (e.target.textContent === "Nasze osiągnięcia") {
         fillModal(data[1].mName, data[1].mText, data[1].mPhoto);
-        modalWineSection.style.display="none";
+        // modalWineSection.style.display="none";
       } else if (e.target.textContent === "Organizacja eventów") {
         fillModal(data[2].mName, data[2].mText, data[2].mPhoto);
-        modalWineSection.style.display="none";
+        // modalWineSection.style.display="none";
       } else if (e.target.textContent === "Nasze wina") {
         fillModal(data[3].mName, data[3].mText, data[3].mPhoto);
-        modalWineSection.style.display="grid";
+        // modalWineSection.style.display="grid";
     
         for (i = 0; i < wines.length; i++) {
           let div=document.createElement("div");
