@@ -7,6 +7,7 @@ const modalText=document.querySelector(".modal-text")
 let modalPhotoBucket = document.querySelector(".modal-photo");
 let modalTextBucket = document.querySelector(".modal-text");
 let modalH2Bucket = document.querySelector(".modal-h2");
+const modalWineSection=document.querySelector(".modal-wine-section")
 const locationPopup = document.querySelector(".location-popup");
 const addressBtn = document.querySelector(".addressBtn");
 const navButtons = document.querySelectorAll("button");
@@ -14,37 +15,37 @@ const navButtons = document.querySelectorAll("button");
 const wines = [
   {
     wineName: "chardonnay pw",
-    wineDescritpion: "chardonnay pw description",
+    wineDescritpion: "chardonnay pw description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus mollitia debitis quis id dolor iusto quae laudantium a.",
     winePhoto: "../src/img/chardonnay-pw-winnica-preto.jpg",
   },
   {
     wineName: "gewurztraminer pw",
-    wineDescritpion: "gewurztraminer pw description",
+    wineDescritpion: "gewurztraminer pw description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus mollitia debitis quis id dolor iusto quae laudantium a. Eligendi ullam, dolores saepe similique rerum fugit veritatis quae inventore dolore, eos animi ea!",
     winePhoto: "../src/img/gewurztraminer-pw-winnica-preto.jpg",
   },
   {
     wineName: "pinot-noir-barrique",
-    wineDescritpion: "pinot-noir-barrique description",
+    wineDescritpion: "pinot-noir-barrique description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores.",
     winePhoto: "../src/img/pinot-noir-barrique-winnica-preto.jpg",
   },
   {
     wineName: "regent-barrique",
-    wineDescritpion: "regent-barrique description",
+    wineDescritpion: "regent-barrique description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus.",
     winePhoto: "../src/img/regent-barrique-winnica-preto.jpg",
   },
   {
     wineName: "rose pw",
-    wineDescritpion: "rose pw description",
+    wineDescritpion: "rose pw description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora.",
     winePhoto: "../src/img/rose-pw-winnica-preto.jpg",
   },
   {
     wineName: "solaris",
-    wineDescritpion: "solaris description",
+    wineDescritpion: "solaris description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus mollitia debitis quis id dolor iusto quae laudantium a. Eligendi ullam, dolores saepe similique rerum fugit veritatis quae inventore dolore, eos animi ea!",
     winePhoto: "../src/img/solaris-winnica-preto.jpg",
   },
   {
     wineName: "souvignier-gris",
-    wineDescritpion: "souvignier-gris description",
+    wineDescritpion: "souvignier-gris description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus mollitia debitis quis id dolor iusto quae laudantium a.",
     winePhoto: "../src/img/souvignier-gris-winnica-preto.jpg",
   },
 ];
@@ -85,6 +86,7 @@ function closeModalAnywhere(e) {
     modal.classList.remove("animatedSlide");
     modalH2Bucket.textContent = "";
     modalTextBucket.textContent = "";
+    
   }
 }
 
@@ -124,22 +126,26 @@ navButtons.forEach((button) =>
       modal.classList.add("animatedSlide");
       if (e.target.textContent === "O nas") {
         fillModal(data[0].mName, data[0].mText, data[0].mPhoto);
+        modalWineSection.style.display="none";
       } else if (e.target.textContent === "Nasze osiągnięcia") {
         fillModal(data[1].mName, data[1].mText, data[1].mPhoto);
+        modalWineSection.style.display="none";
       } else if (e.target.textContent === "Organizacja eventów") {
         fillModal(data[2].mName, data[2].mText, data[2].mPhoto);
+        modalWineSection.style.display="none";
       } else if (e.target.textContent === "Nasze wina") {
         fillModal(data[3].mName, data[3].mText, data[3].mPhoto);
+        modalWineSection.style.display="grid";
     
         for (i = 0; i < wines.length; i++) {
           let div=document.createElement("div");
           let wineNameBucket=document.createElement("h3");
           let wineDescBucket=document.createElement("p");
           let winePhotoBucket=document.createElement("img");
-          modalText.appendChild(div);
+          modalWineSection.appendChild(div);
           div.appendChild(wineNameBucket);
-          div.appendChild(wineDescBucket);
           div.appendChild(winePhotoBucket);
+          div.appendChild(wineDescBucket);
           div.classList.add("wines");
           wineNameBucket.classList.add("wineName");
           wineDescBucket.classList.add("wineDescription");
@@ -151,7 +157,6 @@ navButtons.forEach((button) =>
   winePhotoBucket.setAttribute("src" ,winePhoto)
 }
 
-// PRZEJSC Z OBECNEGO KONTENERU (MODAL-TEXT) DO INNEGO OSTYLOWANEGO OSOBNO !!!
           
           fillWineSelection(
             wines[i].wineName,
