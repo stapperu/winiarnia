@@ -16,37 +16,37 @@ const wines = [
   {
     wineName: "chardonnay pw",
     wineDescritpion: "chardonnay pw description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus mollitia debitis quis id dolor iusto quae laudantium a.",
-    winePhoto: "../src/img/chardonnay-pw-winnica-preto.jpg",
+    winePhoto: "./src/img/chardonnay-pw-winnica-preto.jpg",
   },
   {
     wineName: "gewurztraminer pw",
     wineDescritpion: "gewurztraminer pw description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus mollitia debitis quis id dolor iusto quae laudantium a. Eligendi ullam, dolores saepe similique rerum fugit veritatis quae inventore dolore, eos animi ea!",
-    winePhoto: "../src/img/gewurztraminer-pw-winnica-preto.jpg",
+    winePhoto: "./src/img/gewurztraminer-pw-winnica-preto.jpg",
   },
   {
     wineName: "pinot-noir-barrique",
     wineDescritpion: "pinot-noir-barrique description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores.",
-    winePhoto: "../src/img/pinot-noir-barrique-winnica-preto.jpg",
+    winePhoto: "./src/img/pinot-noir-barrique-winnica-preto.jpg",
   },
   {
     wineName: "regent-barrique",
     wineDescritpion: "regent-barrique description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus.",
-    winePhoto: "../src/img/regent-barrique-winnica-preto.jpg",
+    winePhoto: "./src/img/regent-barrique-winnica-preto.jpg",
   },
   {
     wineName: "rose pw",
     wineDescritpion: "rose pw description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora.",
-    winePhoto: "../src/img/rose-pw-winnica-preto.jpg",
+    winePhoto: "./src/img/rose-pw-winnica-preto.jpg",
   },
   {
     wineName: "solaris",
     wineDescritpion: "solaris description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus mollitia debitis quis id dolor iusto quae laudantium a. Eligendi ullam, dolores saepe similique rerum fugit veritatis quae inventore dolore, eos animi ea!",
-    winePhoto: "../src/img/solaris-winnica-preto.jpg",
+    winePhoto: "./src/img/solaris-winnica-preto.jpg",
   },
   {
     wineName: "souvignier-gris",
     wineDescritpion: "souvignier-gris description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus mollitia debitis quis id dolor iusto quae laudantium a.",
-    winePhoto: "../src/img/souvignier-gris-winnica-preto.jpg",
+    winePhoto: "./src/img/souvignier-gris-winnica-preto.jpg",
   },
 ];
 
@@ -86,6 +86,7 @@ function closeModalAnywhere(e) {
     modal.classList.remove("animatedSlide");
     modalH2Bucket.textContent = "";
     modalTextBucket.textContent = "";
+      modalWineSection.style.display="none";
     
   }
 }
@@ -126,16 +127,16 @@ navButtons.forEach((button) =>
       modal.classList.add("animatedSlide");
       if (e.target.textContent === "O nas") {
         fillModal(data[0].mName, data[0].mText, data[0].mPhoto);
-        // modalWineSection.style.display="none";
+        modalWineSection.style.display="none";
       } else if (e.target.textContent === "Nasze osiągnięcia") {
         fillModal(data[1].mName, data[1].mText, data[1].mPhoto);
-        // modalWineSection.style.display="none";
+        modalWineSection.style.display="none";
       } else if (e.target.textContent === "Organizacja eventów") {
         fillModal(data[2].mName, data[2].mText, data[2].mPhoto);
-        // modalWineSection.style.display="none";
+        modalWineSection.style.display="none";
       } else if (e.target.textContent === "Nasze wina") {
         fillModal(data[3].mName, data[3].mText, data[3].mPhoto);
-        // modalWineSection.style.display="grid";
+        modalWineSection.style.display="grid";
     
         for (i = 0; i < wines.length; i++) {
           let div=document.createElement("div");
