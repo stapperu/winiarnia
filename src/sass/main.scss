@@ -324,7 +324,7 @@ footer {
       .winePhoto {
         height: 50%;
         width: 50%;
-        opacity: 0.8;
+        opacity: 1;
         display:inline-block;
         margin:0 auto;
       }
@@ -338,6 +338,7 @@ footer {
     margin: 30px auto;
     color: black;
     padding: 20px;
+    opacity: 1;
 
     h3 {
       color: black;
@@ -426,7 +427,7 @@ footer {
   }
   to {
     display: flex;
-    opacity: 0.97;
+    opacity: 0.95;
     top: 80px;
   }
 }
