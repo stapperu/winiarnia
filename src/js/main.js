@@ -7,7 +7,7 @@ const modalText=document.querySelector(".modal-text")
 let modalPhotoBucket = document.querySelector(".modal-photo");
 let modalTextBucket = document.querySelector(".modal-text");
 let modalH2Bucket = document.querySelector(".modal-h2");
-const modalWineSection=document.querySelector(".modal-wine-section")
+const modalWineSection=document.querySelector(".modal-wine-section");
 const locationPopup = document.querySelector(".location-popup");
 const addressBtn = document.querySelector(".addressBtn");
 const navButtons = document.querySelectorAll("button");
@@ -87,8 +87,14 @@ function closeModalAnywhere(e) {
     modalH2Bucket.textContent = "";
     modalTextBucket.textContent = "";
       modalWineSection.style.display="none";
-    
+   
   }
+}
+
+function clearWineSection() {
+   div.removeChild(wineNameBucket);
+          div.removeChild(winePhotoBucket);
+          div.removeChild(wineDescBucket);
 }
 
 function fillModal(mName, mText, mPhoto) {
@@ -137,7 +143,7 @@ navButtons.forEach((button) =>
       } else if (e.target.textContent === "Nasze wina") {
         fillModal(data[3].mName, data[3].mText, data[3].mPhoto);
         modalWineSection.style.display="grid";
-    
+    if(!modalWineSection.querySelector(".wines")) {
         for (i = 0; i < wines.length; i++) {
           let div=document.createElement("div");
           let wineNameBucket=document.createElement("h3");
@@ -151,7 +157,6 @@ navButtons.forEach((button) =>
           wineNameBucket.classList.add("wineName");
           wineDescBucket.classList.add("wineDescription");
           winePhotoBucket.classList.add("winePhoto");
-          
           function fillWineSelection(wineName, wineDescription, winePhoto) {
   wineNameBucket.textContent = wineName;
   wineDescBucket.textContent = wineDescription;
@@ -164,12 +169,13 @@ navButtons.forEach((button) =>
             wines[i].wineDescritpion,
             wines[i].winePhoto
           );
-        }
+        }}
       }
     }
   })
 );
  
+console.log(modalWineSection.querySelector(".wines"));
 
 addressBtn.addEventListener("click", openLocationPopup);
 window.addEventListener("click", closeModalAnywhere);

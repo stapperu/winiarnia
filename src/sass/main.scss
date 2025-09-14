@@ -322,6 +322,8 @@ footer {
       font-size: 1.1rem;}
 
       .winePhoto {
+        height: 50%;
+        width: 50%;
         opacity: 0.8;
         display:inline-block;
         margin:0 auto;
@@ -435,6 +437,7 @@ footer {
 
 @media (max-width: 576px) {
   nav {
+    height: 100px;
     width: 100%;
 .nav-left {display: none;}
     .nav-right {
@@ -515,7 +518,12 @@ footer {
   }
 .modal {
     padding: 40px 10px 40px 10px;
-  h2 { font-size: 1.8rem;}
+    text-align: center;
+
+    p {   font-size: 1rem;}
+
+  h2 { font-size: 1.4rem;
+  letter-spacing: 2px;}
 .modal-wine-section {
     width: 100%;
 display: none;
@@ -525,8 +533,8 @@ grid-template-rows: auto;
 .wines {
 .wineName{ font-size: 1.4rem;}
      .winePhoto {
-      img { height: 50%;
-      width: 50%;}
+      img { height: 30%;
+      width: 30%;}
      }
 
      }}
@@ -559,6 +567,8 @@ grid-template-rows: auto;
   footer {
     bottom: 100px;
   }
+
+
   footer,
   nav,
   .nav-right,
