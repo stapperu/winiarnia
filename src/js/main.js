@@ -10,6 +10,7 @@ let modalH2Bucket = document.querySelector(".modal-h2");
 const modalWineSection=document.querySelector(".modal-wine-section");
 const locationPopup = document.querySelector(".location-popup");
 const addressBtn = document.querySelector(".addressBtn");
+const mapInfo=document.querySelector(".map-info");
 const navButtons = document.querySelectorAll("button");
 
 const wines = [
@@ -107,7 +108,21 @@ function fillModal(mName, mText, mPhoto) {
 
 function openLocationPopup() {
   locationPopup.classList.add("show-map");
+  const googlemap=document.querySelector(".googlemap");
+  if(window.innerWidth < 768 ){
+    mapInfo.textContent="Dotknij gdziekolwiek aby zamknąć mapę";
+    googlemap.setAttribute("width","600");
+    googlemap.setAttribute("height","400");
+  } else if (window.innerWidth < 576 ){
+    mapInfo.textContent="Dotknij gdziekolwiek aby zamknąć mapę";
+    googlemap.setAttribute("width","300");
+    googlemap.setAttribute("height","200");
+  } else { 
+        mapInfo.textContent="Kliknij gdziekolwiek aby zamknąć mapę";
+    googlemap.setAttribute("width","800");
+    googlemap.setAttribute("height","600");}
 }
+console.log(window.innerWidth);
 function closeLocationPopupAnywhere(e) {
   const isAddressBtn = addressBtn === e.target || addressBtn.contains(e.target);
   const isLocationPopup =
