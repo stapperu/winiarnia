@@ -1,83 +1,88 @@
+$primary-font: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+$white: rgb(255, 255, 255);
+$light-text: rgb(255, 250, 223);
+$dark-gray: rgb(141, 141, 141);
+$gray: rgb(121, 121, 121);
+$black: rgb(0, 0, 0);
+
 * {
   letter-spacing: 2px;
-  color: rgb(255, 250, 223);
+  color: $light-text;
   margin: 0;
   box-sizing: border-box;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: $primary-font;
   font-weight: lighter;
-  // background-color: black;
 }
 
 body {
-  background-color: black;
+  background-color: $black;
 }
 
 .wrapper {
   overflow: hidden;
-  top: 0;
-  left: 0;
   width: 100%;
-  // height: 1400px;
-  margin: 100px auto 0px;
+  margin: 100px auto 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.wrapper-img {
-  background-image: url(../img/preto3.jpg);
-  background-position-x: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  box-shadow: inset 0px 0px 20px black;
-  position: relative;
-  top: -120px;
-  z-index: -2;
-  height: 100vh;
-  width: 100%;
-}
-h1 {
-  position: relative;
-  text-transform: uppercase;
-  color: white;
-  top: 80px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  :nth-child(2) {
-    font-size: 6rem;
-    letter-spacing: 50px;
-    line-height: 75px;
-  }
-  span {
-    letter-spacing: 15px;
-    line-height: 80px;
+
+  &-img {
+    background: url(../img/preto3.webp) no-repeat center/cover;
+    box-shadow: inset 0 0 20px $black;
+    position: relative;
+    top: -120px;
+    z-index: -2;
+    height: 100vh;
+    width: 100%;
   }
 }
 
-h1::before {
-  position: absolute;
-  left: -1900px;
+h1 {
+  position: relative;
   top: 80px;
-  content: "";
-  width: 140px;
-  height: 3px;
-  transform: skew(-75deg);
-  box-shadow: 1px 1px 20px white;
-  background-color: white;
-  animation: shine 12s infinite;
+  text-transform: uppercase;
+  color: $white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  
+  &:nth-child(2) {
+    font-size: 6rem;
+    line-height: 75px;
+  }
+  
+  span {
+    font-size: 4.7rem;
+    letter-spacing: 40px;
+    line-height: 80px;
+    
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: -1900px;
+    top: 80px;
+    width: 140px;
+    height: 3px;
+    transform: skew(-75deg);
+    box-shadow: 1px 1px 20px $white;
+    background-color: $white;
+    animation: shine 12s infinite;
+  }
 }
 
 nav {
   display: flex;
   align-items: center;
+  position: fixed;
   top: 0;
   left: 0;
-  position: fixed;
   width: 100%;
   height: 60px;
-  // background-color: rgba(15, 15, 15, 0.949);
   background-image: linear-gradient(
     90deg,
     rgba(44, 44, 44, 0.8) 0%,
@@ -97,12 +102,13 @@ nav {
 }
 
 .nav-right {
+  display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   width: 100%;
-  max-width: 100%;
-    padding:10px;
+  padding: 10px;
 }
+
 ul {
   display: flex;
   justify-content: space-evenly;
@@ -112,7 +118,7 @@ ul {
 
   li {
     text-align: center;
-      padding: 10px;
+    padding: 10px;
   }
 
   button {
@@ -123,26 +129,24 @@ ul {
     font-size: 1.3rem;
     text-transform: uppercase;
     text-decoration: none;
-    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $primary-font;
   }
 }
+
 footer {
-  background-color: rgb(0, 0, 0);
+  background-color: $black;
   display: flex;
   flex-direction: column;
-  //   justify-content: space-evenly;
-  //   align-items: center;
-  color: white;
+  color: $white;
   position: relative;
-  bottom: 0;
-  // left: 0;
   width: 100%;
   padding-top: 20px;
-  box-shadow: 0px 0px 20px black;
+  box-shadow: 0 0 20px $black;
+
   a,
   p {
     animation: glow 4s infinite;
-    color: rgb(141, 141, 141);
+    color: $dark-gray;
     font-size: 1.4rem;
     padding: 0.5rem;
     text-decoration: none;
@@ -153,7 +157,7 @@ footer {
   .socials {
     position: relative;
     padding: 10px;
-    margin: 0px auto;
+    margin: 0 auto;
     font-size: 1.5rem;
     width: 100%;
     display: flex;
@@ -176,7 +180,7 @@ footer {
       font-weight: bold;
       text-transform: uppercase;
       font-size: 1rem;
-      color: rgb(121, 121, 121);
+      color: $gray;
     }
   }
 
@@ -184,28 +188,27 @@ footer {
     height: 50px;
     width: 50px;
   }
+
   .location-popup {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    background-color: $white;
     position: absolute;
-    bottom:0px;
+    bottom: 0;
     left: 50%;
-    transform: translate(-50%,0%);
-    background-color: white;
+    transform: translate(-50%, 0);
     border-radius: 8px;
     opacity: 0;
     pointer-events: none;
     z-index: 3;
-    overflow: none;
   }
+
   .map-info {
     font-size: 0.6rem;
     animation: none;
-
-    color: black;
+    color: $black;
     position: relative;
     margin: 20px auto;
   }
@@ -215,83 +218,26 @@ footer {
     pointer-events: auto;
   }
 }
-@keyframes glow {
-  0% {
-    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0);
-  }
-
-  30% {
-    text-shadow: 2px 2px 20px rgb(255, 234, 114);
-    color: white;
-  }
-  0% {
-    text-shadow: 0px 0px 8px rgba(255, 255, 255, 0);
-  }
-}
-
-@keyframes shine {
-  0% {
-  }
-  10% {
-  }
-  15% {
-    transform: translate(0);
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-  18% {
-    background-color: rgb(250, 236, 158);
-  }
-  25% {
-    transform: translate(4500px);
-    background-color: rgba(255, 255, 255, 0.3);
-  }
-  45% {
-  }
-  49% {
-  }
-  50% {
-  }
-  55% {
-  }
-  60% {
-  }
-  70% {
-  }
-  80% {
-  }
-  90% {
-  }
-  100% {
-    transform: translate(4500px);
-    background-color: white;
-  }
-}
 
 .modal {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: none;
   opacity: 0;
-  // pointer-events: none;
   position: absolute;
   width: 90%;
   top: 0;
-  background-image: url(../img/modalbcg.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background: url(../img/modalbcg.webp) no-repeat center/cover;
   border-radius: 12px;
-  padding: 80px 50px 80px 50px;
+  padding: 80px 50px;
   z-index: 5;
 
   h2 {
     font-size: 2.5rem;
-    text-shadow: 2px 2px 6px white;
+    text-shadow: 2px 2px 6px $white;
     text-transform: uppercase;
-    // margin: 30px 10px;
-    color: black;
+    color: $black;
     letter-spacing: 7px;
   }
 
@@ -300,35 +246,37 @@ footer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
-    grid-column-start: auto;
-    grid-row-start: auto;
   }
-.wines {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding-bottom: 70px;
-  margin:10px;
 
-      .wineName {
-  margin: 10px;
-        font-size: 2rem;
-        text-transform: uppercase;
-        letter-spacing: 5px;
-        color: black;
-      }
-      .wineDescription{color: rgb(64, 64, 64);
-      font-size: 1.1rem;}
+  .wines {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-bottom: 70px;
+    margin: 10px;
 
-      .winePhoto {
-        height: 50%;
-        width: 50%;
-        opacity: 1;
-        display:inline-block;
-        margin:0 auto;
-      }
+    .wineName {
+      margin: 10px;
+      font-size: 2rem;
+      text-transform: uppercase;
+      letter-spacing: 5px;
+      color: $black;
     }
+
+    .wineDescription {
+      color: rgb(64, 64, 64);
+      font-size: 1.1rem;
+    }
+
+    .winePhoto {
+      height: 50%;
+      width: 50%;
+      opacity: 1;
+      display: inline-block;
+      margin: 0 auto;
+    }
+  }
 
   .modal-text {
     display: flex;
@@ -336,14 +284,15 @@ footer {
     justify-content: space-between;
     align-items: center;
     margin: 30px auto;
-    color: black;
+    color: $black;
     padding: 20px;
     opacity: 1;
 
     h3 {
-      color: black;
+      color: $black;
       font-size: 2rem;
     }
+
     p:nth-child(even) {
       color: rgb(57, 57, 57);
     }
@@ -353,13 +302,13 @@ footer {
       margin: 20px;
       text-transform: uppercase;
       text-decoration: none;
-      font-size: bold;
-      color: white;
-      text-shadow: 0px 0px 20px black;
+      font-weight: bold;
+      color: $white;
+      text-shadow: 0 0 20px $black;
     }
 
     sub {
-      color: white;
+      color: $white;
     }
 
     span {
@@ -369,12 +318,13 @@ footer {
   }
 
   p {
-    color: black;
+    color: $black;
     line-height: 25px;
     font-size: 1.3rem;
     padding: 10px 15px;
     margin: 0 auto;
   }
+
   .modal-photo {
     height: 200px;
     width: 100%;
@@ -401,7 +351,7 @@ footer {
       margin: 0 auto;
       text-align: center;
       line-height: 4rem;
-      color: black;
+      color: $black;
     }
 
     p {
@@ -416,6 +366,38 @@ footer {
       height: 300px;
       width: 200px;
     }
+  }
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0);
+  }
+  30% {
+    text-shadow: 2px 2px 20px rgb(255, 234, 114);
+    color: $white;
+  }
+  100% {
+    text-shadow: 0 0 8px rgba(255, 255, 255, 0);
+  }
+}
+
+@keyframes shine {
+  0% {}
+  15% {
+    transform: translate(0);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  18% {
+    background-color: rgb(250, 236, 158);
+  }
+  25% {
+    transform: translate(4500px);
+    background-color: rgba(255, 255, 255, 0.3);
+  }
+  100% {
+    transform: translate(4500px);
+    background-color: $white;
   }
 }
 
@@ -440,176 +422,180 @@ footer {
   nav {
     height: 100px;
     width: 100%;
-.nav-left {display: none;}
+
+    .nav-left {
+      display: none;
+    }
+
     .nav-right {
       width: 100%;
+
+      ul {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding: 0;
+
+        li {
+          padding: 0;
+        }
+
+        button {
+          font-size: 0.7rem;
+        }
+      }
     }
   }
+
   footer {
     bottom: 100px;
+
     .location-popup {
       bottom: 20%;
       left: 50%;
-      transform: translate(-50%,0%);
+      transform: translate(-50%, 0);
     }
-  }
-  footer,
-  nav,
-  .nav-right,
-  .socials,
-  .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
 
     .socials,
     .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
       p,
       a {
         font-size: 1.1rem;
-        letter-spacing: 0px;
+        letter-spacing: 0;
       }
+
       .map-info {
-    font-size: 0.6rem;
-  }
+        font-size: 0.6rem;
+      }
+
       span {
         font-size: 0.7rem;
-        letter-spacing: 0px;
+        letter-spacing: 0;
       }
     }
   }
+
   .wrapper {
     width: 100vw;
+
+    &-img {
+      width: 100%;
+      top: -80px;
+    }
   }
-  .wrapper-img {
-    width: 100%;
-    top: -80px;
-  }
+
   h1 {
     top: 80px;
 
-    :nth-child(2) {
-      font-size: 3rem;
+    &:nth-child(2) {
+      font-size: 3.3rem;
       letter-spacing: 25px;
-      line-height: 37px;
+    
     }
+
     span {
-      font-size: 1.5rem;
-      letter-spacing: 7px;
-      line-height: 40px;
-    }
-  }
-
-  h1::before {
-    display: none;
-  }
-
-  .nav-right {
-    max-width: 100vw;
-
-    ul {  display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    padding:0;
-  li {padding: 0;}
-  }
-    button {
-      font-size: 0.7rem;
-    }
-  }
-  .nav-left {
-    display: none;
-  }
-.modal {
-    padding: 40px 10px 40px 10px;
-    text-align: center;
-
-    p {   font-size: 1rem;}
-
-  h2 { font-size: 1.4rem;
-  letter-spacing: 2px;}
-.modal-wine-section {
-    width: 100%;
-display: none;
-grid-template-columns: 1fr;
-grid-template-rows: auto;
-
-.wines {
-.wineName{ font-size: 1.4rem;}
-     .winePhoto {
-      img { height: 30%;
-      width: 30%;}
-     }
-
-     }}
-     }
-    }
-@media (min-width: 576px) and (max-width: 778px) {
-  .nav-left {
-    display: none;
-  }
-
-  h1 {
-    top: 80px;
-
-    :nth-child(2) {
-      font-size: 4rem;
-      letter-spacing: 40px;
+      font-size: 3rem;
+      letter-spacing: 10px;
       line-height: 50px;
     }
-    span {
-      font-size: 2rem;
-      letter-spacing: 10px;
-      line-height: 60px;
+
+    &::before {
+      display: none;
     }
   }
 
-  h1::before {
+  .modal {
+    padding: 40px 10px;
+    text-align: center;
+
+    p {
+      font-size: 1rem;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      letter-spacing: 2px;
+    }
+
+    .modal-wine-section {
+      display: none;
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+
+      .wines {
+        .wineName {
+          font-size: 1.4rem;
+        }
+
+        .winePhoto img {
+          height: 30%;
+          width: 30%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 576px) and (max-width: 778px) {
+  nav .nav-left {
     display: none;
+  }
+
+  h1 {
+    top: 80px;
+
+    &:nth-child(2) {
+      font-size: 4.4rem;
+      letter-spacing: 40px;
+    }
+
+    span {
+      font-size: 4rem;
+      letter-spacing: 15px;
+      line-height: 60px;
+    }
+
+    &::before {
+      display: none;
+    }
   }
 
   footer {
     bottom: 100px;
-  }
 
-
-  footer,
-  nav,
-  .nav-right,
-  .socials,
-  .info {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    button {
-      font-size: 0.9rem;
-    }
     .socials,
     .info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
       p,
       a {
         font-size: 1.5rem;
-        letter-spacing: 0px;
+        letter-spacing: 0;
       }
+
       .map-info {
-    font-size: 0.6rem;
-  
-  }
+        font-size: 0.6rem;
+      }
+
       span {
         font-size: 0.7rem;
-        letter-spacing: 0px;
+        letter-spacing: 0;
       }
     }
   }
 
-    .modal .modal-wine-section {
-    width: 100%;
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: auto;
+  .modal .modal-wine-section {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 }
 
@@ -620,24 +606,25 @@ grid-template-rows: auto;
       p,
       a {
         font-size: 1.2rem;
-        letter-spacing: 0px;
+        letter-spacing: 0;
         padding: 2px;
       }
-       .map-info {
-    font-size: 0.6rem;
-  }
+
+      .map-info {
+        font-size: 0.6rem;
+      }
+
       span {
         font-size: 0.6rem;
-        letter-spacing: 0px;
+        letter-spacing: 0;
         padding: 2px;
       }
     }
   }
+
   .modal .modal-wine-section {
-    width: 100%;
-display: grid;
-grid-template-columns: 1fr;
-grid-template-rows: auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
 }
-
