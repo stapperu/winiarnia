@@ -109,14 +109,16 @@ function fillModal(mName, mText, mPhoto) {
 function openLocationPopup() {
   locationPopup.classList.add("show-map");
   const googlemap=document.querySelector(".googlemap");
-  if(window.innerWidth < 768 ){
+ if (window.innerWidth < 576 ){
+  mapInfo.textContent="Dotknij gdziekolwiek aby zamknąć mapę";
+  googlemap.setAttribute("src", "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d1467.95402047452!2d14.676847!3d52.389189!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4707a1c93302a75b%3A0xae18e317c5f6483e!2sWinnica%20Preto!5e1!3m2!1spl!2spl!4v1759082781007!5m2!1spl!2spl");
+  googlemap.setAttribute("width","300");
+  googlemap.setAttribute("height","200");
+}
+  else if(window.innerWidth < 768 ){
     mapInfo.textContent="Dotknij gdziekolwiek aby zamknąć mapę";
     googlemap.setAttribute("width","600");
     googlemap.setAttribute("height","400");
-  } else if (window.innerWidth < 576 ){
-    mapInfo.textContent="Dotknij gdziekolwiek aby zamknąć mapę";
-    googlemap.setAttribute("width","300");
-    googlemap.setAttribute("height","200");
   } else { 
         mapInfo.textContent="Kliknij gdziekolwiek aby zamknąć mapę";
     googlemap.setAttribute("width","800");
