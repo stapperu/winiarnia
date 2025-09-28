@@ -239,6 +239,7 @@ footer {
     text-transform: uppercase;
     color: $black;
     letter-spacing: 7px;
+    text-align: center;
   }
 
   .modal-wine-section {
@@ -290,7 +291,7 @@ footer {
 
     h3 {
       color: $black;
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
 
     p:nth-child(even) {
@@ -304,7 +305,7 @@ footer {
       text-decoration: none;
       font-weight: bold;
       color: $white;
-      text-shadow: 0 0 20px $black;
+      text-shadow: 0 0 5px $black;
     }
 
     sub {
@@ -409,7 +410,7 @@ footer {
   }
   to {
     display: flex;
-    opacity: 0.95;
+    opacity: 1;
     top: 120px;
   }
 }
@@ -442,6 +443,7 @@ footer {
 
         button {
           font-size: 0.7rem;
+          padding:5px;
         }
       }
     }
@@ -591,7 +593,7 @@ footer {
       }
     }
   }
-
+.modal-h2 {text-align: center;}
   .modal .modal-wine-section {
     display: grid;
     grid-template-columns: 1fr;
