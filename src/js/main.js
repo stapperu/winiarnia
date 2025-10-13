@@ -16,37 +16,37 @@ const navButtons = document.querySelectorAll("button");
 const wines = [
   {
     wineName: "chardonnay pw",
-    wineDescritpion: "chardonnay pw description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus mollitia debitis quis id dolor iusto quae laudantium a.",
+    wineDescritpion: "To eleganckie, wytrawne wino białe z odmiany Chardonnay, dojrzewające na osadzie drożdżowym, co nadaje mu kremowej tekstury i nut smakowych dojrzałych owoców, takich jak ananas i brzoskwinia, z delikatnymi akcentami maślanej wanilii. Idealne do dań rybnych lub serów miękkich, charakteryzuje się zrównoważoną kwasowością i długim finiszem.",
     winePhoto: "./src/img/chardonnay-pw-winnica-preto.webp",
   },
   {
     wineName: "gewurztraminer pw",
-    wineDescritpion: "gewurztraminer pw description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus mollitia debitis quis id dolor iusto quae laudantium a. Eligendi ullam, dolores saepe similique rerum fugit veritatis quae inventore dolore, eos animi ea!",
+    wineDescritpion: "Wytrawny Gewürztraminer PW urzeka intensywnym aromatem róży, liczi i przypraw, z subtelną słodyczą w ustach przełamaną świeżą kwasowością. Doskonałe jako aperitif lub do kuchni azjatyckiej, wino to oferuje pełnię smaku i egzotyczny bukiet, typowy dla tej aromatycznej odmiany.",
     winePhoto: "./src/img/gewurztraminer-pw-winnica-preto.webp",
   },
   {
     wineName: "pinot-noir-barrique",
-    wineDescritpion: "pinot-noir-barrique description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores.",
+    wineDescritpion: "Ciemnorubinowe wino czerwone z Pinot Noir, dojrzewające w beczkach dębowych barrique, co wzbogaca je o nuty wiśni, jagód i subtelnego dymu z waniliowymi akcentami. Wytrawne, o jedwabistej taninowości i eleganckiej strukturze, doskonale komponuje się z dziczyzną lub pieczonym mięsem.",
     winePhoto: "./src/img/pinot-noir-barrique-winnica-preto.webp",
   },
   {
     wineName: "regent-barrique",
-    wineDescritpion: "regent-barrique description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus.",
+    wineDescritpion: "Regent Barrique to intensywne wino czerwone o głębokim rubinowym kolorze, fermentowane i leżakowane w dębowych beczkach, co podkreśla nuty czarnej porzeczki, czekolady i przypraw. Wytrawne, z mocnymi taninami i długim finiszem, idealnie pasuje do grillowanych mięs i serów pleśniowych.",
     winePhoto: "./src/img/regent-barrique-winnica-preto.webp",
   },
   {
     wineName: "rose pw",
-    wineDescritpion: "rose pw description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora.",
+    wineDescritpion: "Wytrawny róż PW o jasnym łososiowym odcieniu, z aromatami truskawek, malin i cytrusów, oferuje świeżą kwasowość i lekką mineralność. Lekkie i orzeźwiające, świetnie sprawdza się jako wino letnie do sałatek, owoców morza lub jako aperitif w ciepłe dni.",
     winePhoto: "./src/img/rose-pw-winnica-preto.webp",
   },
   {
     wineName: "solaris",
-    wineDescritpion: "solaris description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus mollitia debitis quis id dolor iusto quae laudantium a. Eligendi ullam, dolores saepe similique rerum fugit veritatis quae inventore dolore, eos animi ea!",
+    wineDescritpion: "Solaris to wytrawne wino białe z odpornej odmiany hybrydowej, charakteryzujące się cytrusowymi i zielonymi nutami jabłka oraz tropikalnych owoców, z wysoką kwasowością i mineralnym finiszem. Odporne na choroby i klimat, idealne do lekkich dań wegetariańskich lub jako codzienne wino stołowe.",
     winePhoto: "./src/img/solaris-winnica-preto.webp",
   },
   {
     wineName: "souvignier-gris",
-    wineDescritpion: "souvignier-gris description Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio, tempora. Fugiat sunt dicta repudiandae, nam nisi obcaecati aliquid quis, laboriosam facere odio sit rerum ipsum impedit veniam placeat voluptates, ab asperiores. Quo obcaecati, eaque repellat a et maxime animi asperiores consequuntur tempora. Rerum, suscipit tempora architecto delectus mollitia debitis quis id dolor iusto quae laudantium a.",
+    wineDescritpion: "Souvignier Gris PW to wytrawne wino białe o złocistym kolorze, z bogatym bukietem marakui, grejpfruta i kwiatów, oferujące pełnię smaku i zrównoważoną strukturę. Hybrydowa odmiana o wysokiej jakości, doskonale komponuje się z daniami azjatyckimi lub owocami morza, podkreślając swoją aromatyczność i świeżość.",
     winePhoto: "./src/img/souvignier-gris-winnica-preto.webp",
   },
 ];
